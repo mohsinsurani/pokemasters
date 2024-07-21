@@ -16,7 +16,7 @@ struct PokemonDetailScreen: View {
     @State private var isRefreshing = false
     @State private var cancellable: AnyCancellable?
     @Environment(\.presentationMode) var presentationMode
-    @State private var isNavigationBarHidden = true
+    @State private var isNavigationBarHidden = false // Set default to false
     
     private let progressColor = Color.blue
     
@@ -24,67 +24,17 @@ struct PokemonDetailScreen: View {
         ZStack(alignment: .topLeading) {
             ScrollView {
                 VStack {
-                    if let details = viewModel.pokemonDetails {
-                        VStack {
-                            KFImage(URL(string: PokemonSpriteType.frontDefault(details.id).url))
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 150, height: 150)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                                .padding()
-                            
-                            Text(details.name.capitalized)
-                                .font(.largeTitle)
-                                .padding()
-                            
-                            Text("Type: \(details.types?.first?.type.name.capitalized ?? "Unknown")")
-                                .font(.title2)
-                            
-                            Text(String(details.baseExperience ?? 0))
-                                .padding()
-                            
-                            if let attackStat = details.stats?.first(where: { $0.stat.name == "attack" }) {
-                                HStack {
-                                    Text("Attack: \(attackStat.baseStat)")
-                                    ProgressView(value: Double(attackStat.baseStat) / 100)
-                                }
-                                .padding(.horizontal)
-                            }
-                            
-                            if let speedStat = details.stats?.first(where: { $0.stat.name == "speed" }) {
-                                HStack {
-                                    Text("Speed: \(speedStat.baseStat)")
-                                    ProgressView(value: Double(speedStat.baseStat) / 100).progressViewStyle(RoundedRectProgressViewStyle())
-                                }
-                                .padding(.horizontal)
-                            }
-                            
-                            if let defenseStat = details.stats?.first(where: { $0.stat.name == "defense" }) {
-                                HStack {
-                                    Text("Defense: \(defenseStat.baseStat)")
-                                    ProgressView(value: Double(defenseStat.baseStat) / 100)
-                                }
-                                .padding(.horizontal)
-                            }
-                            
-                            // Additional details
-                            Text("Base Experience: \(details.baseExperience ?? 0)")
-                                .padding(.horizontal)
-                            Text("Height: \(details.height )")
-                                .padding(.horizontal)
-                            Text("Weight: \(details.weight ?? 0)")
-                                .padding(.horizontal)
-                        }
+                    if let details = viewModel.pokemonDetails,
+                       let ability = viewModel.pokAbilities,
+                       let pokStats = viewModel.pokStats {
+                        PokemonDetailContentView(details: details, ability: ability, stats: pokStats)
                     } else {
-                        Text("Loading...")
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                            .padding()
                     }
                 }
             }
-            .onAppear {
-                viewModel.fetchPokemonDetails(pokemonId: pokemon.name)
-            }
-            .navigationBarHidden(isNavigationBarHidden)
             .background(
                 GeometryReader { proxy in
                     Color.clear
@@ -93,10 +43,15 @@ struct PokemonDetailScreen: View {
                     .frame(height: 0)
             )
             .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
+                // Toggle the navigation bar visibility based on scroll offset
                 withAnimation {
-                    isNavigationBarHidden = value >= -50
+                    isNavigationBarHidden = value < -50
                 }
-                    }
+            }
+            .onAppear {
+                viewModel.fetchPokemonDetails(pokemonId: pokemon.pid)
+            }
+            .coordinateSpace(name: "scroll")
             
             // Custom back button
             Button(action: {
@@ -110,8 +65,8 @@ struct PokemonDetailScreen: View {
             }
             .padding()
         }
-        .coordinateSpace(name: "scroll")
-        .navigationTitle(isNavigationBarHidden ? "" : pokemon.name.capitalized)
+        .navigationTitle("") // Clear title when hidden
+        .navigationBarHidden(isNavigationBarHidden) // Control the navigation bar visibility
     }
     
     // Clean up the subscription when the view disappears
@@ -120,13 +75,23 @@ struct PokemonDetailScreen: View {
     }
 }
 
+// Example implementation of ScrollOffsetPreferenceKey
 struct ScrollOffsetPreferenceKey: PreferenceKey {
-    typealias Value = CGFloat
     static var defaultValue: CGFloat = 0
+    
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = nextValue()
     }
 }
+
+
+//struct ScrollOffsetPreferenceKey: PreferenceKey {
+//    typealias Value = CGFloat
+//    static var defaultValue: CGFloat = 0
+//    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+//        value = nextValue()
+//    }
+//}
 
 
 struct PokemonDetailScreen_Previews: PreviewProvider {

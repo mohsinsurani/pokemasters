@@ -11,7 +11,8 @@ import SwiftUI
 struct PokeMastersApp: App {
     var body: some Scene {
         WindowGroup {
-            PokeMoneListScreen()
+            let pokemon = Pokemon(url: "https://pokeapi.co/api/v2/pokemon/2/", name: "ivysaur")
+            PokemonDetailScreen(pokemon: pokemon)
         }
     }
 }

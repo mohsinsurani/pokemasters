@@ -12,7 +12,7 @@ struct PokemonSpecsModel: Decodable {
     let id: Int
     let name: String
     let baseExperience: Int?
-    let height: Int
+    let height: Int?
     let isDefault: Bool
     let order: Int?
     let weight: Int?

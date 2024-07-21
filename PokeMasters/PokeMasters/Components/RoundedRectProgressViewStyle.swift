@@ -6,29 +6,26 @@
 //
 
 import SwiftUI
-
 struct RoundedRectProgressViewStyle: ProgressViewStyle {
     func makeBody(configuration: Configuration) -> some View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 14)
-                .frame(width: 250, height: 28)
+                .frame(height: 28)
                 .foregroundColor(Color(red: 0.9, green: 0.9, blue: 0.9)) // Light gray background
                 .overlay(
                     RoundedRectangle(cornerRadius: 14)
-                        .stroke(Color.black, lineWidth: 2) // Black border
+                        .stroke(Color.gray, lineWidth: 1) // Gray border
                 )
             
             RoundedRectangle(cornerRadius: 14)
-                .frame(width: CGFloat(configuration.fractionCompleted ?? 0) * 250, height: 28)
-                .foregroundColor(Color(red: 1.0, green: 0.8, blue: 0.0)) // Yellow progress bar
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14)
-                        .stroke(Color.black, lineWidth: 2) // Black border
-                )
+                .frame(width: (configuration.fractionCompleted ?? 0) * 250, height: 28)
+                .foregroundColor(Color.orange.opacity(1.0)) // Yellow progress bar
+                .animation(.linear, value: configuration.fractionCompleted) // Smooth animation
         }
-        .padding()
+        .padding(.vertical, 4)
     }
 }
+
 
 struct RoundProgressView_Previews: PreviewProvider {
     static var previews: some View {
