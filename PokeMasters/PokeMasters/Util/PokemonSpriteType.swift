@@ -14,6 +14,7 @@ enum PokemonSpriteType {
     case frontDefault(String)
     case frontShiny(String)
     
+    // normal pngs
     var url: String {
         let defUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
         let imgType = ".png"
@@ -29,6 +30,7 @@ enum PokemonSpriteType {
         }
     }
     
+    //gif
     var gifUrl: String {
         let defUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/"
         switch self {

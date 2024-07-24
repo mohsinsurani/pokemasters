@@ -34,13 +34,14 @@ struct AdditionalDetailsView: View {
                     .accessibilityHint("Displays the first held item if available.")
                 
             }
-        }    .accessibilityElement(children: .combine) // Combine all text elements into one accessibility element
+      }
+        .accessibilityElement(children: .combine) // Combine all text elements into one accessibility element
     }
 }
 
-//
-//struct AdditionalDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AdditionalDetailsView()
-//    }
-//}
+
+struct AdditionalDetailsView_Previews: PreviewProvider {
+    static var previews: some View {
+        AdditionalDetailsView(details: DummyData.dummyPokemonSpecs)
+    }
+}

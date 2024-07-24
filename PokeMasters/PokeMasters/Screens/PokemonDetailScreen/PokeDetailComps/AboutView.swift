@@ -15,61 +15,65 @@ struct AboutView: View {
     var body: some View {
         SingleAxisGeometryReader { width in
             VStack {
+                // Base Experience
                 if let baseExp = details.baseExperience {
-                    let desc = PokemonExpEnum.experienceDetail(for: baseExp)
-                    let baseText = "Base Experience of \(pokemon.name.capitalized) is \(baseExp)"
-                    
-                    Text(baseText + "\n" + desc)
+                    let description = PokemonExpEnum.experienceDetail(for: baseExp)
+                    let baseExperienceText = "Base Experience of \(pokemon.name.capitalized) is \(baseExp)"
+                    let baseText = "\(baseExperienceText)\n\(description)"
+
+                    // displaying Base experience
+                    Text(baseText)
                         .font(PokeFonts.bodyFont)
                         .foregroundColor(Color.black)
                         .padding()
-                        .frame(width: abs(width - 30)) // Set fixed width
+                        .frame(width: max(0, width - 30)) // Set fixed width
                         .background(Color.orange.opacity(1.0))
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .multilineTextAlignment(.center) // Center align text
-                        .lineLimit(nil) // Allow multiple lines// Center the ZStack
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
                         .accessibilityLabel("Base Experience")
-                        .accessibilityValue(baseText)
+                        .accessibilityValue(baseExperienceText)
                         .accessibilityHint("Describes the base experience and additional details of the Pokémon.")
-                    
-                    
-                    if let height = details.height, let weight = details.weight {
-                        let heightTxt = "Height: \(height) decimetres"
-                        let weightTxt = "Weight: \(weight) hectograms"
-                        
-                        Text(weightTxt + "\n" + heightTxt)
-                            .frame(width: abs(width - 60)) // Set fixed width
-                            .font(PokeFonts.bodyFont)
-                            .foregroundColor(Color.black)
-                            .padding()
-                            .background(Color.orange.opacity(1.0))
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                            .multilineTextAlignment(.center) // Center align text
-                            .lineLimit(nil) // Allow multiple lines
-                            .accessibilityLabel("Physical Stats")
-                            .accessibilityValue(weightTxt + ", " + heightTxt)
-                            .accessibilityHint("Displays the weight and height of the Pokémon.")
-                        
-                    }
-                    
-                    if let heldItems = details.heldItems, !heldItems.isEmpty {
-                        let helddesc = "total held items"
-                        let heldItems = heldItems.map { $0.item.name }.joined(separator: ", ")
+                }
 
-                        Text(helddesc + " are " + heldItems)
-                            .frame(width: abs(width - 60)) // Set fixed width
-                            .font(PokeFonts.bodyFont)
-                            .foregroundColor(Color.black)
-                            .padding()
-                            .background(Color.orange.opacity(1.0))
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                            .multilineTextAlignment(.center) // Center align text
-                            .lineLimit(nil) // Allow multiple lines
-                            .accessibilityLabel("Held Items")
-                            .accessibilityValue(heldItemsList)
-                            .accessibilityHint("Lists all held items for the Pokémon.")
-                        
-                    }
+                // Height and Weight
+                if let height = details.height, let weight = details.weight {
+                    let heightText = "Height: \(height) decimetres"
+                    let weightText = "Weight: \(weight) hectograms"
+                    let physicalStatsText = "\(weightText)\n\(heightText)"
+
+                    // displaying height and weight
+                    Text(physicalStatsText)
+                        .frame(width: max(0, width - 60)) // Set fixed width
+                        .font(PokeFonts.bodyFont)
+                        .foregroundColor(Color.black)
+                        .padding()
+                        .background(Color.orange.opacity(1.0))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .accessibilityLabel("Physical Stats")
+                        .accessibilityValue("\(weightText), \(heightText)")
+                        .accessibilityHint("Displays the weight and height of the Pokémon.")
+                }
+
+                // Held Items
+                if let heldItems = details.heldItems, !heldItems.isEmpty {
+                    let heldItemsList = heldItems.map { $0.item.name }.joined(separator: ", ")
+                    let heldItemsText = "Total held items are \(heldItemsList)"
+
+                    Text(heldItemsText)
+                        .frame(width: max(0, width - 60)) // Set fixed width
+                        .font(PokeFonts.bodyFont)
+                        .foregroundColor(Color.black)
+                        .padding()
+                        .background(Color.orange.opacity(1.0))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .accessibilityLabel("Held Items")
+                        .accessibilityValue(heldItemsList)
+                        .accessibilityHint("Lists all held items for the Pokémon.")
                 }
             }
         }
@@ -77,11 +81,11 @@ struct AboutView: View {
 }
 
 
-//struct AboutView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AboutView()
-//    }
-//}
+struct AboutView_Previews: PreviewProvider {
+    static var previews: some View {
+        AboutView(details: DummyData.dummyPokemonSpecs, pokemon: DummyData.dummypokemon)
+    }
+}
 
 struct SingleAxisGeometryReader<Content: View>: View {
     private struct SizeKey: PreferenceKey {

@@ -18,8 +18,7 @@ struct Pokemon: Codable, Equatable, Hashable {
     }
 }
 
-struct PokemonListResponse: Codable {
+struct PokemonResponse: Codable {
     let count: Int
-    let pokemon: [Pokemon]
+    let results: [Pokemon]
 }
-

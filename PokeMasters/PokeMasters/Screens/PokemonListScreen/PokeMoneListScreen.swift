@@ -15,6 +15,7 @@ struct PokeMoneListScreen: View {
     @State private var selectedPokemon: Pokemon? = nil
     @State private var readyToNavigate : Bool = false
 
+    //filtering based on search
     var filteredPokemon: [Pokemon] {
         if searchText.isEmpty {
             return viewModel.pokemonList
@@ -81,15 +82,8 @@ struct PokeMoneListScreen: View {
                 selectedPokemon = nil
             }
         }.onAppear {
+            //fetch data on appear
             viewModel.fetchPokemonList()
-        }
-    }
-    
-    struct ScrollOffsetPreferenceKey: PreferenceKey {
-        typealias Value = CGFloat
-        static var defaultValue: CGFloat = 0
-        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-            value = nextValue()
         }
     }
     
@@ -127,30 +121,5 @@ struct PokeMoneListScreen: View {
         static var previews: some View {
             PokeMoneListScreen()
         }
-    }
-}
-
-struct ScrollViewOffsetDetector: View {
-    let onEndReached: () -> Void
-
-    var body: some View {
-        GeometryReader { proxy in
-            Color.clear.onAppear {
-                if proxy.frame(in: .global).maxY < UIScreen.main.bounds.height {
-                    onEndReached()
-                }
-            }
-        }
-    }
-}
-
-extension View {
-    func navigationTitleView<Content: View>(_ content: () -> Content) -> some View {
-        self.navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    content()
-                }
-            }
     }
 }

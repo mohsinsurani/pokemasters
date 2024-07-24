@@ -13,14 +13,14 @@ struct MovesView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            // Optional header
+            // Moves count display
             Text("Moves: \(moves.count)")
                 .font(PokeFonts.titleFont)
                 .padding(.bottom, 5)
                 .accessibilityLabel("Total Moves")
                 .accessibilityValue("\(moves.count) moves available")
 
-            // Use LazyVGrid with adaptive grid items
+            // Use LazyVGrid with adaptive grid items to display all the moves
             LazyVGrid(
                 columns: [GridItem(.adaptive(minimum: 80))], // Adaptive grid with a minimum item width
                 spacing: 10
@@ -45,10 +45,8 @@ struct MovesView: View {
     }
 }
 
-
-
-//struct MovesView_Previews: PreviewProvider {
-    //    static var previews: some View {
-    //        MovesView()
-    //    }
-    //}
+struct MovesView_Previews: PreviewProvider {
+    static var previews: some View {
+        MovesView(moves: DummyData.dummyPokemonSpecs.moves!)
+    }
+}

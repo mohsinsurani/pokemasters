@@ -22,13 +22,13 @@ struct PokemonDetailScreen: View {
         ZStack {
             ScrollView {
                 ZStack {
+                    // displaying Only if we get all the data
                     if let details = viewModel.pokemonDetails,
                        let ability = viewModel.pokAbilities,
                        let pokStats = viewModel.pokStats {
                         PokemonDetailContentView(details: details, ability: ability, stats: pokStats, pokemon: pokemon)
                             .accessibilityLabel("Pokémon details for \(pokemon.name.capitalized)")
                             .accessibilityHint("Displays detailed information about \(pokemon.name.capitalized).")
-                        
                     }
                 }
             }

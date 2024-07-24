@@ -25,6 +25,7 @@ struct PokemonImagesView: View {
                 .accessibilityLabel("Shiny front image of \(pokemon.name.capitalized)")
                 .accessibilityHint("Displays the shiny front sprite of the Pokémon")
             
+            // Front Default GIF
             KFAnimatedImage(URL(string: PokemonSpriteType.frontDefault(pokemon.pid).gifUrl))
                 .frame(width: height, height: height)
                 .brightness(0.1) // Adjust brightness
@@ -43,9 +44,8 @@ struct PokemonImagesView: View {
 }
 
 
-//
-//struct PokemonImagesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PokemonImagesView()
-//    }
-//}
+struct PokemonImagesView_Previews: PreviewProvider {
+    static var previews: some View {
+        PokemonImagesView(details: DummyData.dummyPokemonSpecs, pokemon: DummyData.dummypokemon)
+    }
+}

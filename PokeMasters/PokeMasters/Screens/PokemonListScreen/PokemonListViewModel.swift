@@ -16,13 +16,9 @@ class PokemonListViewModel: ObservableObject {
     @Published var error: Error?
     @Published private(set) var viewState: ViewState?
 
-    var currentOffset = 0
     private let limit = 10
-    var totalPokemonCount = 0
     
-    private let baseURL = "https://pokeapi.co/api/v2/pokemon"
     private var cancellables = Set<AnyCancellable>()
-    private var pendingRequests: [() -> Void] = []
     private(set) var page = 0
     private(set) var totalPages: Int?
     
@@ -34,6 +30,7 @@ class PokemonListViewModel: ObservableObject {
         viewState == .fetching
     }
     
+    //Initial fetching of the pokemon list, fetch - background and update in main thread
     func fetchPokemonList() {
         reset()
         viewState = .loading
@@ -58,6 +55,7 @@ class PokemonListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    //Main actor to handle the concurrent ops
     @MainActor
     func fetchNextSetOfItems() {
         
@@ -87,17 +85,12 @@ class PokemonListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    // to compare if it's last pokemon item
     func hasReachedEnd(of user: Pokemon) -> Bool {
         pokemonList.last?.name == user.name
     }
     
-    private func processPendingRequests() {
-        if let nextRequest = pendingRequests.first {
-            pendingRequests.removeFirst()
-            nextRequest()
-        }
-    }
-    
+    //search item from UI
     var filteredPokemon: [Pokemon] {
         if searchText.isEmpty {
             return pokemonList
@@ -106,18 +99,10 @@ class PokemonListViewModel: ObservableObject {
         }
     }
     
-    var shouldLoadMoreData: Bool {
-        return !isLoading && pokemonList.count < totalPokemonCount
-    }
-    
+    //Releasing observables
     deinit {
         cancellables.removeAll()
     }
-}
-
-struct PokemonResponse: Codable {
-    let count: Int
-    let results: [Pokemon]
 }
 
 extension PokemonListViewModel {
@@ -127,6 +112,7 @@ extension PokemonListViewModel {
         case finished
     }
     
+    //resetting to default
     func reset() {
         if viewState == .finished {
             pokemonList.removeAll()

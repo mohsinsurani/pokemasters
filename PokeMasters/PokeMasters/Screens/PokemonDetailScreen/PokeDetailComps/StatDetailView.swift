@@ -27,12 +27,13 @@ struct StatDetailView: View {
                         Text("Increase moves")
                             .font(PokeFonts.subtitleFontItalic)
                             .padding(.bottom, 4)
-                        accessibilityLabel("Increase Moves Header")
+                            .accessibilityLabel("Increase Moves Header")
                             .accessibilityHint("Lists moves that increase the stat.")
                         
                         
                         let topIncreaseMoves = increase.sorted(by: { $0.change > $1.change })
                         
+                        // displaying Top impact moves with stages
                         LazyVStack {
                             ForEach(topIncreaseMoves.indices, id: \.self) { index in
                                 let increaseMove = topIncreaseMoves[index]
@@ -58,6 +59,7 @@ struct StatDetailView: View {
                     .padding(.bottom, 8)
                 }
                 
+                // displaying Top impact decrease moves with reducing stages
                 if let decrease = affectingMoves.decrease, !decrease.isEmpty {
                     let topDecMoves = decrease.sorted(by: { $0.change < $1.change })
                     
@@ -99,8 +101,8 @@ struct StatDetailView: View {
 }
 
 
-//struct StatDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        StatDetailView(affectingMoves: <#AffectingMoves#>)
-//    }
-//}
+struct StatDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        StatDetailView(affectingMoves: DummyData.dummyPokeStats.affectingMoves!)
+    }
+}

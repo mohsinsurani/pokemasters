@@ -7,6 +7,7 @@
 /* Purpose of this Progress style is to display in details view in specialties */
 
 import SwiftUI
+
 struct RoundedRectProgressViewStyle: ProgressViewStyle {
     func makeBody(configuration: Configuration) -> some View {
         ZStack(alignment: .leading) {

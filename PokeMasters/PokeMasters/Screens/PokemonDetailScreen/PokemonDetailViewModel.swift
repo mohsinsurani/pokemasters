@@ -31,7 +31,7 @@ class PokemonDetailViewModel: ObservableObject {
         self.pokemonService = pokemonService
     }
     
-    // Function to fetch tube data from the API
+    // Function to fetch pokemon data from the 3 APIs (fetchPokemonStats fails for many pokemon)
     func fetchPokemonDetails(pokemonId: String) {
         let detailsPublisher = pokemonService.fetchPokemonDetails(pokemonId: pokemonId)
         let abilitiesPublisher = pokemonService.fetchPokemonAbility(pokemonId: pokemonId)

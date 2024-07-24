@@ -17,7 +17,8 @@ struct EffectsView: View {
         
         let effectText = "Detail: \(longEffect)"
         let shortText = "Abstract: \(shorteffect)"
-        
+        // SingleAxisGeometryReader to just get width (single param)
+        // displaying shiort and long description of the effects
         SingleAxisGeometryReader { width in
             VStack {
                 Text(shortText)
@@ -54,8 +55,8 @@ struct EffectsView: View {
 
 
 
-//struct EffectsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EffectsView()
-//    }
-//}
+struct EffectsView_Previews: PreviewProvider {
+    static var previews: some View {
+        EffectsView(effectEntries: DummyData.dummyEffectModel.effectEntries!)
+    }
+}

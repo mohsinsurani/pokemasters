@@ -18,6 +18,7 @@ struct PokeCell: View {
             let imgURLString = PokemonSpriteType.frontDefault(pokemon.pid).url
             
             let imgURL = URL(string: imgURLString)
+            //Caching the image here using Kingfisher
             KFImage(imgURL)
                 .resizable()
                 .frame(width: 100, height: 100)
@@ -26,6 +27,7 @@ struct PokeCell: View {
                 .accessibilityLabel("\(pokemon.name.capitalized) Pokémon image")
                 .accessibilityHint("Image of \(pokemon.name.capitalized) Pokémon")
             
+            //Pokemon name
             Text(pokemon.name.capitalized)
                 .font(PokeFonts.smallFont)
                 .padding(.top, 5)
@@ -44,8 +46,14 @@ struct PokeCell: View {
 }
 
 
-//struct PokeCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PokeCell()
-//    }
-//}
+struct PokeCell_Previews: PreviewProvider {
+    static var previews: some View {
+        let dummyPokemon = Pokemon(url: "https://pokeapi.co/api/v2/pokemon/2/", name: "ivysaur")
+        let dummyViewModel = PokemonListViewModel() // or a mock view model if needed
+        
+        // Return a preview of PokeCell with dummy data
+        PokeCell(pokemon: dummyPokemon, viewModel: dummyViewModel)
+            .previewLayout(.sizeThatFits) // Adjusts the preview to fit the view's size
+            .padding()
+    }
+}
