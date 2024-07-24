@@ -4,9 +4,11 @@
 //
 //  Created by Admin on 21/07/2024.
 //
+/* Purpose of this enum is to fetch base experience based on integer value of base experience */
 
 import Foundation
 
+// define Experience enum
 enum PokemonExpEnum {
     case high
     case moderate
@@ -23,6 +25,7 @@ enum PokemonExpEnum {
         }
     }
 
+    // assign Experience based on integer
     static func experienceDetail(for value: Int) -> String {
         switch value {
         case 200...Int.max:

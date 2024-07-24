@@ -4,6 +4,7 @@
 //
 //  Created by Admin on 21/07/2024.
 //
+/* Purpose of StatsView is to display Stats */
 
 import SwiftUI
 

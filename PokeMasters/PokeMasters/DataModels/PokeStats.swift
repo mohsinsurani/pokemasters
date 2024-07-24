@@ -1,3 +1,6 @@
+
+/* Purpose of this data model is to bind the data coming from api for pokemon Stats */
+
 import Foundation
 
 struct PokeStats: Codable {

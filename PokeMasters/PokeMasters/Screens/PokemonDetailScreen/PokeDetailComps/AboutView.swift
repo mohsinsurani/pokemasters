@@ -4,18 +4,20 @@
 //
 //  Created by Admin on 21/07/2024.
 //
+/* Purpose of AboutView is to display details for the pokemon */
 
 import SwiftUI
 
 struct AboutView: View {
     var details: PokemonSpecsModel
-    
+    var pokemon: Pokemon
+
     var body: some View {
         SingleAxisGeometryReader { width in
             VStack {
                 if let baseExp = details.baseExperience {
                     let desc = PokemonExpEnum.experienceDetail(for: baseExp)
-                    let baseText = "Base Experience of \(details.name.capitalized) is \(baseExp)"
+                    let baseText = "Base Experience of \(pokemon.name.capitalized) is \(baseExp)"
                     
                     Text(baseText + "\n" + desc)
                         .font(PokeFonts.bodyFont)
@@ -26,6 +28,10 @@ struct AboutView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                         .multilineTextAlignment(.center) // Center align text
                         .lineLimit(nil) // Allow multiple lines// Center the ZStack
+                        .accessibilityLabel("Base Experience")
+                        .accessibilityValue(baseText)
+                        .accessibilityHint("Describes the base experience and additional details of the Pokémon.")
+                    
                     
                     if let height = details.height, let weight = details.weight {
                         let heightTxt = "Height: \(height) decimetres"
@@ -40,6 +46,10 @@ struct AboutView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .multilineTextAlignment(.center) // Center align text
                             .lineLimit(nil) // Allow multiple lines
+                            .accessibilityLabel("Physical Stats")
+                            .accessibilityValue(weightTxt + ", " + heightTxt)
+                            .accessibilityHint("Displays the weight and height of the Pokémon.")
+                        
                     }
                     
                     if let heldItems = details.heldItems, !heldItems.isEmpty {
@@ -55,6 +65,10 @@ struct AboutView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .multilineTextAlignment(.center) // Center align text
                             .lineLimit(nil) // Allow multiple lines
+                            .accessibilityLabel("Held Items")
+                            .accessibilityValue(heldItemsList)
+                            .accessibilityHint("Lists all held items for the Pokémon.")
+                        
                     }
                 }
             }

@@ -4,6 +4,7 @@
 //
 //  Created by Admin on 20/07/2024.
 //
+/* Purpose of PokemonDetailScreen is to display various features and statistics of the selected pokemon */
 
 import SwiftUI
 import Combine
@@ -14,24 +15,20 @@ struct PokemonDetailScreen: View {
     @ObservedObject private var viewModel = PokemonDetailViewModel()
     @State private var errorMessage: String?
     @State private var isRefreshing = false
-    @State private var cancellable: AnyCancellable?
     @Environment(\.presentationMode) var presentationMode
     @State private var isNavigationBarHidden = false // Set default to false
-    
-    private let progressColor = Color.blue
-    
+        
     var body: some View {
-        ZStack(alignment: .topLeading) {
+        ZStack {
             ScrollView {
-                VStack {
+                ZStack {
                     if let details = viewModel.pokemonDetails,
                        let ability = viewModel.pokAbilities,
                        let pokStats = viewModel.pokStats {
-                        PokemonDetailContentView(details: details, ability: ability, stats: pokStats)
-                    } else {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                            .padding()
+                        PokemonDetailContentView(details: details, ability: ability, stats: pokStats, pokemon: pokemon)
+                            .accessibilityLabel("Pokémon details for \(pokemon.name.capitalized)")
+                            .accessibilityHint("Displays detailed information about \(pokemon.name.capitalized).")
+                        
                     }
                 }
             }
@@ -43,7 +40,6 @@ struct PokemonDetailScreen: View {
                     .frame(height: 0)
             )
             .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
-                // Toggle the navigation bar visibility based on scroll offset
                 withAnimation {
                     isNavigationBarHidden = value < -50
                 }
@@ -54,24 +50,49 @@ struct PokemonDetailScreen: View {
             .coordinateSpace(name: "scroll")
             
             // Custom back button
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "chevron.left")
-                    .padding()
-                    .background(Color.white)
-                    .clipShape(Circle())
-                    .shadow(radius: 5)
+            VStack {
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .padding()
+                            .background(Color.white)
+                            .foregroundColor(Color.black)
+                            .clipShape(Circle())
+                            .shadow(radius: 5)
+                    }
+                    .accessibilityLabel("Back")
+                    .accessibilityHint("Returns to the previous screen")
+                    Spacer()
+                }
+                Spacer()
             }
             .padding()
         }
-        .navigationTitle("") // Clear title when hidden
-        .navigationBarHidden(isNavigationBarHidden) // Control the navigation bar visibility
-    }
-    
-    // Clean up the subscription when the view disappears
-    private func cleanup() {
-        cancellable?.cancel()
+        .background(
+            viewModel.pokemonDetails == nil ? AnyView(
+                VStack {
+                    Spacer()
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: Color.orange))
+                        .padding()
+                        .accessibilityLabel("Loading Pokémon details")
+                        .accessibilityHint("Fetching details for \(pokemon.name.capitalized). Please wait.")
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            ) : AnyView(EmptyView())
+        )
+        .navigationTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .alert(item: $viewModel.error) { error in
+            Alert(title: Text("Error"), message: Text(error.message), dismissButton: .default(Text("OK")) {
+                presentationMode.wrappedValue.dismiss()
+            })
+        }
     }
 }
 
@@ -83,16 +104,6 @@ struct ScrollOffsetPreferenceKey: PreferenceKey {
         value = nextValue()
     }
 }
-
-
-//struct ScrollOffsetPreferenceKey: PreferenceKey {
-//    typealias Value = CGFloat
-//    static var defaultValue: CGFloat = 0
-//    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-//        value = nextValue()
-//    }
-//}
-
 
 struct PokemonDetailScreen_Previews: PreviewProvider {
     static var previews: some View {

@@ -4,14 +4,15 @@
 //
 //  Created by Admin on 20/07/2024.
 //
+/* Purpose of this enum is to fetch urls of gif and png used by this app */
 
 import Foundation
 
 enum PokemonSpriteType {
-    case backDefault(Int)
-    case backShiny(Int)
-    case frontDefault(Int)
-    case frontShiny(Int)
+    case backDefault(String)
+    case backShiny(String)
+    case frontDefault(String)
+    case frontShiny(String)
     
     var url: String {
         let defUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"

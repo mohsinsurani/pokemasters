@@ -7,48 +7,128 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "41FCC1F3-618F-4F44-A24A-94BF447D2B28"
-            shouldBeEnabled = "No"
+            uuid = "BE8E7C80-6A9D-4140-BB19-7DCA9C6CFEFE"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokeMasters/Screens/PokemonListViewModel.swift"
+            filePath = "PokeMasters/Screens/PokemonAPIService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "fetchPokemonList()"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "fetchPokemonDetails(pokemonId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BE8E7C80-6A9D-4140-BB19-7DCA9C6CFEFE - 757dd84b0088cf13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokeMasters.PokemonService.fetchPokemonDetails(pokemonId: Swift.String) -&gt; Combine.AnyPublisher&lt;PokeMasters.PokemonSpecsModel, Alamofire.AFError&gt;"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1651">
+               </Location>
+               <Location
+                  uuid = "BE8E7C80-6A9D-4140-BB19-7DCA9C6CFEFE - 2ab7c12504c324cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Alamofire.AFError in PokeMasters.PokemonService.fetchPokemonDetails(pokemonId: Swift.String) -&gt; Combine.AnyPublisher&lt;PokeMasters.PokemonSpecsModel, Alamofire.AFError&gt;"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "138">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F370EA01-879D-4616-AAA4-02834E5E9031"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokeMasters/Screens/PokemonAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "fetchPokemonDetails(pokemonId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F474E23-4236-4375-AA64-E01418AA75C3"
-            shouldBeEnabled = "No"
+            uuid = "B0ED8968-063D-47D3-8635-9DB29C254E58"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokeMasters/Screens/PokemonListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "fetchPokemonList()"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "fetchNextSetOfItems()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C2DB4175-36F4-4906-B99D-EB9F867CED87"
-            shouldBeEnabled = "No"
+            uuid = "2D24C060-EE54-4D8A-9D49-14CEC8DC6776"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokeMasters/Screens/PokemonListViewModel.swift"
+            filePath = "PokeMasters/Screens/PokeMoneListScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "fetchPokemonList()"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7372D0A-FC02-4EB3-A5F2-6FE33D125A0D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokeMasters/APIService/PokemonAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "fetchPokemonAbility(pokemonId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0BB73DF2-46FA-4867-B0B7-9F37B63E19C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokeMasters/APIService/PokemonAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "fetchPokemonDetails(pokemonId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

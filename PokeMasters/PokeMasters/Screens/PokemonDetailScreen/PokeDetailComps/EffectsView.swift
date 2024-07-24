@@ -4,6 +4,7 @@
 //
 //  Created by Admin on 21/07/2024.
 //
+/* Purpose of EffectsView is to display abstract and detailed effects for the pokemon */
 
 import SwiftUI
 
@@ -28,6 +29,9 @@ struct EffectsView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     .multilineTextAlignment(.leading) // Align text to the leading edge
                     .lineLimit(nil) // Allow multiple lines
+                    .accessibilityLabel("Effect Abstract")
+                    .accessibilityValue(shortText)
+                    .accessibilityHint("Describes the abstract effect of the ability or move.")
                 
                 Text(effectText)
                     .font(PokeFonts.bodyFont)
@@ -38,7 +42,12 @@ struct EffectsView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     .multilineTextAlignment(.leading) // Align text to the leading edge
                     .lineLimit(nil) // Allow multiple lines
+                    .accessibilityLabel("Effect Detail")
+                    .accessibilityValue(effectText)
+                    .accessibilityHint("Describes the detailed effect of the ability or move.")
+                
             }.padding(.bottom)
+                .accessibilityElement(children: .combine)
         }
     }
 }

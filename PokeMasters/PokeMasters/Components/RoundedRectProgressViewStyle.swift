@@ -4,6 +4,7 @@
 //
 //  Created by Admin on 21/07/2024.
 //
+/* Purpose of this Progress style is to display in details view in specialties */
 
 import SwiftUI
 struct RoundedRectProgressViewStyle: ProgressViewStyle {

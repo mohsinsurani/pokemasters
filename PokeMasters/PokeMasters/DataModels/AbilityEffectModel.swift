@@ -4,11 +4,12 @@
 //
 //  Created by Admin on 21/07/2024.
 //
+/* Purpose of this data model is to bind the data coming from api for pokemon Abilities */
 
 import Foundation
 
 struct AbilityEffectModel: Codable {
-    let effectEntries: [EffectEntry]
+    let effectEntries: [EffectEntry]?
     
     enum CodingKeys: String, CodingKey {
         case effectEntries = "effect_entries"

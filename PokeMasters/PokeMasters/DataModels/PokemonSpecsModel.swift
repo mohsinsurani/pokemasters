@@ -4,13 +4,13 @@
 //
 //  Created by Admin on 20/07/2024.
 //
+/* Purpose of this data model is to bind the data coming from api for pokemon details */
 
 import Foundation
 
 // Main model representing Pokémon details
 struct PokemonSpecsModel: Decodable {
-    let id: Int
-    let name: String
+    let id: Int?
     let baseExperience: Int?
     let height: Int?
     let isDefault: Bool
@@ -28,7 +28,6 @@ struct PokemonSpecsModel: Decodable {
 
     private enum CodingKeys: String, CodingKey {
         case id
-        case name
         case baseExperience = "base_experience"
         case height
         case isDefault = "is_default"
@@ -147,8 +146,8 @@ struct Species: Decodable {
 
 // Cries model
 struct Cries: Decodable {
-    let latest: String
-    let legacy: String
+    let latest: String?
+    let legacy: String?
 }
 
 // Stat model

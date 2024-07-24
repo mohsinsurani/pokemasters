@@ -4,6 +4,7 @@
 //
 //  Created by Admin on 20/07/2024.
 //
+// Purpose: This viewModel will do all the data related work for PokeMonDetailScreen
 
 import Foundation
 import Alamofire
@@ -11,7 +12,7 @@ import Combine
 
 class PokemonDetailViewModel: ObservableObject {
     @Published var isLoading: Bool = false
-    @Published var error: String?
+    @Published var error: PokeError?
     @Published var pokemonDetails: PokemonSpecsModel?
     @Published var pokAbilities: AbilityEffectModel?
     @Published var pokStats: PokeStats?
@@ -44,7 +45,7 @@ class PokemonDetailViewModel: ObservableObject {
                 case .finished:
                     break
                 case .failure(let error):
-                    self?.pokeDataSubject.send(completion: .failure(error))
+                    self?.error = PokeError(message: error.localizedDescription)
                 }
             }, receiveValue: { [weak self] (details, abilitiesData, pokeStats) in
                 // Sending the data back to View
@@ -54,4 +55,13 @@ class PokemonDetailViewModel: ObservableObject {
             })
             .store(in: &cancellables)
     }
+    
+    deinit {
+        cancellables.removeAll()
+    }
+}
+
+struct PokeError: Identifiable {
+    var id = UUID()
+    var message: String
 }

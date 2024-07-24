@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Viewtypes of the detail screen - tabbars
 enum ViewType: String, CaseIterable {
     case about, effects, stats, moves, affectingMove
     

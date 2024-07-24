@@ -4,6 +4,7 @@
 //
 //  Created by Admin on 21/07/2024.
 //
+/* Purpose of this theme is to configure theme of color and fonts used by this app */
 
 import Foundation
 import SwiftUI
@@ -16,6 +17,7 @@ struct PokeColors {
     static let background = Color(red: 0.9, green: 0.9, blue: 0.9) // Light gray background
 }
 
+// define fonts
 struct PokeFonts {
     static let fontFamilyname = "Chalkboard SE"
     // Primary font for titles and headers
