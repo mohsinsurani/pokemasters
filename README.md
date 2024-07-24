@@ -7,7 +7,7 @@ It also uses Alamofire and Kingfisher to fetch the data remotely.
 
 Running and tested Version
  - XCode 14.2 (14C18)
- - iOS 14.0 deployment target
+ - iOS 16.0 deployment target
  - iPhone Landscape and Portrait support
  - MacOS Monterey 12.7.3
 
