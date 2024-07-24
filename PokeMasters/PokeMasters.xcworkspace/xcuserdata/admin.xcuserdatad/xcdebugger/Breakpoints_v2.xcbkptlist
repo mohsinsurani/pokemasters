@@ -114,6 +114,38 @@
             endingLineNumber = "65"
             landmarkName = "fetchPokemonAbility(pokemonId:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F7372D0A-FC02-4EB3-A5F2-6FE33D125A0D - 5f3680ef3c72cdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Alamofire.AFError in PokeMasters.PokemonService.fetchPokemonAbility(pokemonId: Swift.String) -&gt; Combine.AnyPublisher&lt;PokeMasters.AbilityEffectModel, Alamofire.AFError&gt;"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/APIService/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  uuid = "F7372D0A-FC02-4EB3-A5F2-6FE33D125A0D - 3c19e10e1f074e81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Alamofire.AFError in PokeMastersTests.PokemonService.fetchPokemonAbility(pokemonId: Swift.String) -&gt; Combine.AnyPublisher&lt;PokeMastersTests.AbilityEffectModel, Alamofire.AFError&gt;"
+                  moduleName = "PokeMastersTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/APIService/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "138">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -130,6 +162,38 @@
             endingLineNumber = "47"
             landmarkName = "fetchPokemonDetails(pokemonId:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0BB73DF2-46FA-4867-B0B7-9F37B63E19C2 - f2c35bb2c60331b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Alamofire.AFError in PokeMasters.PokemonService.fetchPokemonDetails(pokemonId: Swift.String) -&gt; Combine.AnyPublisher&lt;PokeMasters.PokemonSpecsModel, Alamofire.AFError&gt;"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/APIService/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  uuid = "0BB73DF2-46FA-4867-B0B7-9F37B63E19C2 - 893a5894f07c5003"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Alamofire.AFError in PokeMastersTests.PokemonService.fetchPokemonDetails(pokemonId: Swift.String) -&gt; Combine.AnyPublisher&lt;PokeMastersTests.PokemonSpecsModel, Alamofire.AFError&gt;"
+                  moduleName = "PokeMastersTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/APIService/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "138">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -146,6 +210,38 @@
             endingLineNumber = "29"
             landmarkName = "fetchPokemonLists(limit:page:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71E884A5-77F0-4712-AF5A-D08A2B5AA4EB - 4f076f301eb36fe3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Alamofire.AFError in PokeMasters.PokemonService.fetchPokemonLists(limit: Swift.Int, page: Swift.Int) -&gt; Combine.AnyPublisher&lt;PokeMasters.PokemonResponse, Alamofire.AFError&gt;"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/APIService/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  uuid = "71E884A5-77F0-4712-AF5A-D08A2B5AA4EB - d5b94b261e410a35"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Alamofire.AFError in PokeMastersTests.PokemonService.fetchPokemonLists(limit: Swift.Int, page: Swift.Int) -&gt; Combine.AnyPublisher&lt;PokeMastersTests.PokemonResponse, Alamofire.AFError&gt;"
+                  moduleName = "PokeMastersTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/APIService/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "138">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -162,6 +258,38 @@
             endingLineNumber = "83"
             landmarkName = "fetchPokemonStats(pokemonId:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2073DF8D-DBA3-4784-95DF-6368F914E197 - eaa2da65c8735f53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Alamofire.AFError in PokeMasters.PokemonService.fetchPokemonStats(pokemonId: Swift.String) -&gt; Combine.AnyPublisher&lt;PokeMasters.PokeStats, Alamofire.AFError&gt;"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/APIService/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  uuid = "2073DF8D-DBA3-4784-95DF-6368F914E197 - b14cb767eed235eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Alamofire.AFError in PokeMastersTests.PokemonService.fetchPokemonStats(pokemonId: Swift.String) -&gt; Combine.AnyPublisher&lt;PokeMastersTests.PokeStats, Alamofire.AFError&gt;"
+                  moduleName = "PokeMastersTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/APIService/PokemonAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "138">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -178,6 +306,38 @@
             endingLineNumber = "52"
             landmarkName = "fetchPokemonDetails(pokemonId:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4F58FE9E-B29E-4690-89B0-25CEA6F9C3B8 - 72858b25153e753d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (PokeMasters.PokemonSpecsModel, PokeMasters.AbilityEffectModel, PokeMasters.PokeStats) -&gt; () in PokeMasters.PokemonDetailViewModel.fetchPokemonDetails(pokemonId: Swift.String) -&gt; ()"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1400">
+               </Location>
+               <Location
+                  uuid = "4F58FE9E-B29E-4690-89B0-25CEA6F9C3B8 - ce7a26ed81caf907"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (PokeMastersTests.PokemonSpecsModel, PokeMastersTests.AbilityEffectModel, PokeMastersTests.PokeStats) -&gt; () in PokeMastersTests.PokemonDetailViewModel.fetchPokemonDetails(pokemonId: Swift.String) -&gt; ()"
+                  moduleName = "PokeMastersTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1400">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -194,6 +354,38 @@
             endingLineNumber = "29"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "33BE9F5B-17C0-4F44-B337-0BF44E23C8EC - 45e5fa324611b197"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;SwiftUI.ModifiedContent&lt;PokeMasters.PokemonDetailContentView, SwiftUI.AccessibilityAttachmentModifier&gt;&gt; in closure #1 () -&gt; SwiftUI.ZStack&lt;Swift.Optional&lt;SwiftUI.ModifiedContent&lt;PokeMasters.PokemonDetailContentView, SwiftUI.AccessibilityAttachmentModifier&gt;&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.coordinateSpace&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(name: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in PokeMasters.PokemonDetailScreen.body.getter : some"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1041">
+               </Location>
+               <Location
+                  uuid = "33BE9F5B-17C0-4F44-B337-0BF44E23C8EC - ebfc361a57a08e6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;SwiftUI.ModifiedContent&lt;PokeMastersTests.PokemonDetailContentView, SwiftUI.AccessibilityAttachmentModifier&gt;&gt; in closure #1 () -&gt; SwiftUI.ZStack&lt;Swift.Optional&lt;SwiftUI.ModifiedContent&lt;PokeMastersTests.PokemonDetailContentView, SwiftUI.AccessibilityAttachmentModifier&gt;&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.coordinateSpace&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(name: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in PokeMastersTests.PokemonDetailScreen.body.getter : some"
+                  moduleName = "PokeMastersTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1041">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -210,6 +402,38 @@
             endingLineNumber = "74"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "204B0453-BCA4-46A5-9DB1-B48A9602B4CA - 12ea22bb2f56797"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokeMasters.PokemonDetailScreen.body.getter : some"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "867">
+               </Location>
+               <Location
+                  uuid = "204B0453-BCA4-46A5-9DB1-B48A9602B4CA - 9947e2bf633da57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokeMastersTests.PokemonDetailScreen.body.getter : some"
+                  moduleName = "PokeMastersTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "867">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -226,6 +450,38 @@
             endingLineNumber = "85"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "28522E84-070E-494C-AB19-A171C86EEC41 - 12ea22bb2f5593a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokeMasters.PokemonDetailScreen.body.getter : some"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "1255">
+               </Location>
+               <Location
+                  uuid = "28522E84-070E-494C-AB19-A171C86EEC41 - 9947e2bf633e4fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokeMastersTests.PokemonDetailScreen.body.getter : some"
+                  moduleName = "PokeMastersTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "1255">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -242,6 +498,38 @@
             endingLineNumber = "86"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C4373679-9E8D-465B-B8AA-FF06AA428C0E - 12ea22bb2f5591b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokeMasters.PokemonDetailScreen.body.getter : some"
+                  moduleName = "PokeMasters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1517">
+               </Location>
+               <Location
+                  uuid = "C4373679-9E8D-465B-B8AA-FF06AA428C0E - 9947e2bf633e4db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokeMastersTests.PokemonDetailScreen.body.getter : some"
+                  moduleName = "PokeMastersTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/mobileproj/PokeMasters/PokeMasters/PokeMasters/Screens/PokemonDetailScreen/PokemonDetailScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1517">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
